@@ -1,5 +1,9 @@
 package com.lyg.bitmap;
 
+import android.graphics.Bitmap;
+
+import java.util.HashMap;
+
 /**
  * Created by Niki on 2019-12-22 21:23
  * Email: m13296644326@163.com
@@ -14,13 +18,14 @@ public class BitmapShareManager {
     private BitmapShareManager() {
     }
 
-    private int count = 0;
+    private HashMap<String, Bitmap> bitmapSet = new HashMap<>();
 
-    public int getCount() {
-        return count;
+    public void put(String key, Bitmap bitmap){
+        bitmapSet.put(key, bitmap);
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public Bitmap get(String key){
+        return bitmapSet.get(key);
     }
+
 }
